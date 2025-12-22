@@ -1,0 +1,7 @@
+{
+    "scripts": [
+        "create path (sling:OrderedFolder) /content/dam/adobexp",
+        "create path (nt:unstructured) /content/dam/adobexp/jcr:content",
+        "set properties on /content/dam/adobexp/jcr:content\n  set cq:conf{String} to /conf/adobexp\n  set jcr:title{String} to \"Adobe XP Components\"\nend"
+    ]
+}

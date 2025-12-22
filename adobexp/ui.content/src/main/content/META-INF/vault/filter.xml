@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/adobexp"/>
+    <filter root="/content/adobexp"/>
+    <filter root="/content/dam/adobexp" mode="update">
+        <exclude pattern="/content/dam/adobexp(/.*)?"/>
+        <include pattern="/content/dam/adobexp/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/adobexp/asset.jpg" mode="update"/>
+    <filter root="/content/experience-fragments/adobexp" mode="merge"/>
+</workspaceFilter>
