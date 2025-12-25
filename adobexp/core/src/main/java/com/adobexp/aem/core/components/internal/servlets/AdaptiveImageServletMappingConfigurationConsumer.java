@@ -65,6 +65,7 @@ public class AdaptiveImageServletMappingConfigurationConsumer {
 
     private Map<String, AdaptiveImageServletMappingConfigurationFactory> configs = new HashMap<>();
 
+    @SuppressWarnings("rawtypes")
     private List<ServiceRegistration> serviceRegistrations = new ArrayList<>();
 
     private int oldAISDefaultResizeWidth = Integer.MIN_VALUE;
@@ -149,7 +150,7 @@ public class AdaptiveImageServletMappingConfigurationConsumer {
      * the servlet again based on active configurations.
      */
     private void updateServletRegistrations() {
-        for (ServiceRegistration serviceRegistration : serviceRegistrations) {
+        for (@SuppressWarnings("rawtypes") ServiceRegistration serviceRegistration : serviceRegistrations) {
             if (serviceRegistration != null) {
                 serviceRegistration.unregister();
             }

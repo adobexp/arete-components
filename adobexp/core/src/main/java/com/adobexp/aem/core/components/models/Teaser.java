@@ -155,6 +155,7 @@ public interface Teaser {
      * @since com.adobexp.aem.core.components.models 12.21.0
      */
     @Nullable
+    @SuppressWarnings("rawtypes")
     default Link getLink() {
         return null;
     }

@@ -25,7 +25,7 @@ import com.day.cq.wcm.api.Page;
 /**
  * Interface for a single navigation item, used by the {@link Breadcrumb} and {@link Navigation} models.
  *
- * @since com.adobexp.aem.core.components.models 11.0.0
+ * @since com.adobe.cq.wcm.core.components.models 11.0.0
  */
 @ConsumerType
 public interface NavigationItem extends ListItem {
@@ -34,7 +34,7 @@ public interface NavigationItem extends ListItem {
      * Returns the {@link Page} contained by this navigation item.
      *
      * @return The {@link Page} contained in this navigation item.
-     * @since com.adobexp.aem.core.components.models 11.0.0; marked <code>default</code> in 12.1.0
+     * @since com.adobe.cq.wcm.core.components.models 11.0.0; marked <code>default</code> in 12.1.0
      * @deprecated since 12.1.0 as {@link NavigationItem} relies on {@link ListItem}
      */
     @Deprecated
@@ -46,7 +46,7 @@ public interface NavigationItem extends ListItem {
      * Returns {@code true} if the page contained by this navigation item is active.
      *
      * @return {@code true} if it is the current page or one of its ancestors, otherwise {@code false}
-     * @since com.adobexp.aem.core.components.models 11.0.0; marked <code>default</code> in 12.1.0
+     * @since com.adobe.cq.wcm.core.components.models 11.0.0; marked <code>default</code> in 12.1.0
      */
     default boolean isActive() {
         return false;
@@ -56,7 +56,7 @@ public interface NavigationItem extends ListItem {
      * Returns {@code true} if the page contained by this navigation item is the current page.
      *
      * @return {@code true} if it is the current page, otherwise {@code false}
-     * @since com.adobexp.aem.core.components.models 12.20.0
+     * @since com.adobe.cq.wcm.core.components.models 12.20.0
      */
     default boolean isCurrent() { return false; }
 
@@ -65,7 +65,7 @@ public interface NavigationItem extends ListItem {
      *
      * @return the children of this {@code NavigationItem}; if this {@code NavigationItem} doesn't have any children, the returned
      * {@link java.util.List} will be empty
-     * @since com.adobexp.aem.core.components.models 12.2.0
+     * @since com.adobe.cq.wcm.core.components.models 12.2.0
      */
     default List<NavigationItem> getChildren() {
         return null;
@@ -75,7 +75,7 @@ public interface NavigationItem extends ListItem {
      * Returns the depth level of this {@code NavigationItem}.
      *
      * @return the depth level
-     * @since com.adobexp.aem.core.components.models 12.2.0
+     * @since com.adobe.cq.wcm.core.components.models 12.2.0
      */
     default int getLevel() {
         return 0;

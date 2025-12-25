@@ -58,6 +58,7 @@ public interface LinkBuilder {
      *
      * @return {@link Link}
      */
+    @SuppressWarnings("rawtypes")
     @NotNull
     Link build();
 }

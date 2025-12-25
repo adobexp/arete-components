@@ -113,6 +113,7 @@ public class CoreResourceWrapper extends ResourceWrapper {
         this.valueMap = new ValueMapDecorator(Collections.unmodifiableMap(properties));
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public <AdapterType> AdapterType adaptTo(Class<AdapterType> type) {
         if (type == ValueMap.class) {

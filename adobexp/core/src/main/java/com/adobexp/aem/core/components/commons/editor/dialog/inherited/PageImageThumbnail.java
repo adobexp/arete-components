@@ -110,6 +110,7 @@ public class PageImageThumbnail {
             // retrieve the page link from the component model
 
             Teaser teaserModel = modelFactory.getModelFromWrappedRequest(request, component, Teaser.class);
+            @SuppressWarnings("rawtypes")
             Link link = null;
             if (teaserModel != null) {
                 link = teaserModel.getLink();

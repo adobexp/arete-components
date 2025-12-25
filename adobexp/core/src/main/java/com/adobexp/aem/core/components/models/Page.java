@@ -26,7 +26,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.osgi.annotation.versioning.ConsumerType;
 
-import com.adobe.cq.export.json.ContainerExporter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
@@ -35,7 +34,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  * @since com.adobexp.aem.core.components.models 1.0.0
  */
 @ConsumerType
-public interface Page extends ContainerExporter {
+public interface Page {
 
     /**
      * Key used for the regular favicon file.

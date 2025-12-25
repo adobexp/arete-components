@@ -66,6 +66,7 @@ public class AllowedColorSwatchesDataSourceServlet extends SlingSafeMethodsServl
 
     protected List<Resource> getAllowedColorSwatches(@NotNull SlingHttpServletRequest request) {
         List<Resource> colors = Collections.emptyList();
+        @SuppressWarnings("deprecation")
         String contentPath = (String) request.getAttribute(Value.CONTENTPATH_ATTRIBUTE);
         ResourceResolver resolver = request.getResourceResolver();
         ContentPolicy policy = null;

@@ -54,6 +54,7 @@ public class Editor {
 
     @PostConstruct
     private void initModel() {
+        LOGGER.info("Initializing Editor model");
         readChildren();
     }
 

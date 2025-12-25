@@ -41,7 +41,7 @@ import com.day.cq.wcm.api.policies.ContentPolicyManager;
         service = { Servlet.class },
         property = {
                 "sling.servlet.resourceTypes=" + AllowedHeadingElementsDataSourceServlet.RESOURCE_TYPE_V1,
-                //"sling.servlet.resourceTypes=" + AllowedHeadingElementsDataSourceServlet.RESOURCE_TYPE_TITLE_V1,
+                "sling.servlet.resourceTypes=" + AllowedHeadingElementsDataSourceServlet.RESOURCE_TYPE_TITLE_V1,
                 "sling.servlet.methods=GET",
                 "sling.servlet.extensions=html"
         }
@@ -49,7 +49,7 @@ import com.day.cq.wcm.api.policies.ContentPolicyManager;
 public class AllowedHeadingElementsDataSourceServlet extends SlingSafeMethodsServlet {
 
     public final static String RESOURCE_TYPE_V1 = "adobexp/components/commons/datasources/allowedheadingelements/v1";
-    //public final static String RESOURCE_TYPE_TITLE_V1 = "core/wcm/components/title/v1/datasource/allowedtypes";
+    public final static String RESOURCE_TYPE_TITLE_V1 = "adobexp/components/title/v1/datasource/allowedtypes";
     public final static String PN_ALLOWED_HEADING_ELEMENTS = "allowedHeadingElements";
     public final static String PN_DEFAULT_HEADING_ELEMENT = "headingElement";
     public final static String PN_ALLOWED_TYPES = "allowedTypes";
@@ -63,6 +63,7 @@ public class AllowedHeadingElementsDataSourceServlet extends SlingSafeMethodsSer
         request.setAttribute(DataSource.class.getName(), allowedHeadingElementsDataSource);
     }
 
+    @SuppressWarnings("deprecation")
     private List<Resource> getAllowedHeadingElements(@NotNull SlingHttpServletRequest request) {
         List<Resource> allowedHeadingElements = new ArrayList<>();
         ResourceResolver resolver = request.getResourceResolver();

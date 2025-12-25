@@ -15,15 +15,8 @@
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 package com.adobexp.aem.core.components.models;
 
-import java.util.Collections;
-import java.util.Map;
-
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.osgi.annotation.versioning.ConsumerType;
-
-import com.adobe.cq.export.json.ComponentExporter;
-import com.adobe.cq.export.json.ContainerExporter;
 
 /**
  * Defines the {@code ExperienceFragment} Sling Model used for the
@@ -32,7 +25,7 @@ import com.adobe.cq.export.json.ContainerExporter;
  * @since com.adobexp.aem.core.components.models 1.0.0
  */
 @ConsumerType
-public interface ExperienceFragment extends ContainerExporter {
+public interface ExperienceFragment {
 
     /**
      * Name of the configuration policy property that specifies the experience fragment variation path. The property
@@ -85,35 +78,5 @@ public interface ExperienceFragment extends ContainerExporter {
      * @since com.adobexp.aem.core.components.models 12.15.0
      */
     default boolean isConfigured()  {return false; }
-    
-    /**
-     * @see ComponentExporter#getExportedType()
-     * @since com.adobexp.aem.core.components.models 12.9.0
-     */
-    @NotNull
-    @Override
-    default String getExportedType() {
-        return "";
-    }
-    
-    /**
-     * @see ContainerExporter#getExportedItemsOrder()
-     * @since com.adobexp.aem.core.components.models 12.15.0
-     */
-    @NotNull
-    @Override
-    default String[] getExportedItemsOrder() {
-        return new String[]{};
-    }
-    
-    /**
-     * @see ContainerExporter#getExportedItems()
-     * @since com.adobexp.aem.core.components.models 12.15.0
-     */
-    @NotNull
-    @Override
-    default Map<String, ? extends ComponentExporter> getExportedItems() {
-        return Collections.emptyMap();
-    }
 
 }

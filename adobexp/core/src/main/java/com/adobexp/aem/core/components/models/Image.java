@@ -257,6 +257,7 @@ public interface Image {
      * @return the image's link.
      * @since com.adobexp.aem.core.components.models 12.20.0
      */
+    @SuppressWarnings("rawtypes")
     default Link getImageLink() {
         return null;
     }

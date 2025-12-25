@@ -30,7 +30,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceWrapper;
-import org.apache.sling.caconfig.ConfigurationBuilder;
 import org.apache.sling.models.factory.ModelFactory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -64,7 +63,7 @@ public final class ComponentUtils {
     private static final int ID_HASH_LENGTH = 10;
 
 
-    private static final String DATALAYER_ATTRIBUTE_NAME = "isDataLayerEnabled";
+    public static final String DATALAYER_ATTRIBUTE_NAME = "isDataLayerEnabled";
 
     /**
      * Private constructor to prevent instantiation of utility class.

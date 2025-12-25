@@ -64,6 +64,7 @@ public interface ImageArea {
      * @since com.adobexp.aem.core.components.models 12.20.0
      * @return a {@link com.adobexp.aem.core.components.commons.link.Link} object
      */
+    @SuppressWarnings("rawtypes")
     default Link getLink() {
         return null;
     }

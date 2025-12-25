@@ -89,6 +89,7 @@ public final class LocalizationUtils {
      * @return A page, that belongs to the same language or live copy as the current page, and can be used as the local
      * alternative to the referenced page, or empty if no such page exists.
      */
+    @SuppressWarnings("unchecked")
     public static Optional<Page> getLocalPage(@NotNull final Page referencePage,
                                               @NotNull final Page currentPage,
                                               @NotNull final ResourceResolver resourceResolver,

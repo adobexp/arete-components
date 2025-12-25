@@ -145,6 +145,7 @@ public class Utils {
      *
      * @return a set of resource types for components included in the page template
      */
+    @SuppressWarnings("deprecation")
     @NotNull
     public static Set<String> getTemplateResourceTypes(@NotNull Page page, @NotNull SlingHttpServletRequest request, @NotNull ModelFactory modelFactory) {
         Template template = page.getTemplate();
@@ -219,6 +220,7 @@ public class Utils {
      *
      * @return Set of strings from input
      */
+    @SuppressWarnings("rawtypes")
     @NotNull
     public static Set<String> getStrings(@Nullable final Object input) {
         Set<String> strings = new LinkedHashSet<>();
@@ -256,6 +258,7 @@ public class Utils {
      * @param request - the current {@link SlingHttpServletRequest}
      * @return JSON object of the request parameters
      */
+    @SuppressWarnings("deprecation")
     public static JSONObject getJsonOfRequestParameters(SlingHttpServletRequest request) throws JSONException {
         Set<String> formFieldNames = getFormFieldNames(request);
         org.json.JSONObject jsonObj = new org.json.JSONObject();
@@ -354,6 +357,7 @@ public class Utils {
 
             if (StringUtils.isNotEmpty(linkURL)) {
                 // the inherited resource is the featured image of the linked page
+                @SuppressWarnings("rawtypes")
                 Optional<Link> link = getOptionalLink(linkManager.get(resource).build());
                 inheritedResource = link
                         .map(link1 -> {
@@ -460,7 +464,8 @@ public class Utils {
      * @param link The {@link Link}
      * @return the Optional<Link> object
      */
-    public static Optional<Link> getOptionalLink(Link link) {
+    @SuppressWarnings("rawtypes")
+    public static Optional<Link> getOptionalLink( Link link) {
         if (link == null) {
             return Optional.empty();
         }

@@ -647,6 +647,7 @@ public class AdaptiveImageServlet extends SlingSafeMethodsServlet {
      * @param imageName the name of the image
      * @throws IOException
      */
+    @SuppressWarnings("deprecation")
     private void stream(@NotNull SlingHttpServletResponse response, @NotNull InputStream inputStream, @NotNull String contentType,
                         String imageName)
             throws IOException {

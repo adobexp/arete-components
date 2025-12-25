@@ -24,7 +24,7 @@ import org.osgi.annotation.versioning.ConsumerType;
  * @since com.adobexp.aem.core.components.models 1.0.0
  */
 @ConsumerType
-public interface LayoutContainer extends Container {
+public interface LayoutContainer {
 
     /**
      * Name of the resource property that indicates the layout that should be used by the container component.
