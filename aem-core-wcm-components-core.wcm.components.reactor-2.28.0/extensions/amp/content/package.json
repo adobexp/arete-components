@@ -1,0 +1,35 @@
+{
+    "name": "core.wcm.components.extensions.amp-content",
+    "version": "2.28.0",
+    "description": "Adobe Experience Manager Core WCM Components AMP Extension Content Package",
+    "license": "Apache-2.0",
+    "private": false,
+    "homepage": "https://github.com/adobe/aem-core-wcm-components",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/adobe/aem-core-wcm-components"
+    },
+    "scripts": {
+        "aemfed": "aemfed -e \"**/*___jb_+(old|tmp)___\" -w \"src/content/jcr_root/\"",
+        "eslint": "eslint . --no-error-on-unmatched-pattern",
+        "eslint:fix": "eslint . --fix",
+        "lint": "npm-run-all --parallel eslint stylelint",
+        "stylelint": "stylelint \"**/*.css\" \"**/*.less\"",
+        "stylelint:fix": "stylelint \"**/*.css\" \"**/*.less\" --fix",
+        "sync-pom-version": "sync-pom-version"
+    },
+    "devDependencies": {
+        "aemfed": "^0.1.1",
+        "eslint": "^7.32.0",
+        "npm-run-all": "^4.1.5",
+        "stylelint": "^13.13.1",
+        "stylelint-config-recommended": "^5.0.0",
+        "stylelint-selector-bem-pattern": "^2.1.1",
+        "sync-pom-version-to-package": "^1.6.1"
+    },
+    "overrides": {
+        "aemfed": {
+            "proxy-agent": "^6.3.1"
+        }
+    }
+}

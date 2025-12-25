@@ -1,0 +1,15 @@
+{
+    "env": {
+        "browser": true,
+        "jquery": true
+    },
+    "globals": {
+        "Coral": false,
+        "Granite": false,
+        "CMP": false,
+        "Promise": false
+    },
+    "parserOptions": {
+      "ecmaVersion": 2020
+    }
+}
