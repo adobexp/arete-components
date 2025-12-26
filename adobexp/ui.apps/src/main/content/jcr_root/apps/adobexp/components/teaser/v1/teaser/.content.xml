@@ -4,6 +4,6 @@
     jcr:description="Teaser block allowing a combination of an image, title, rich text description and actions/links"
     jcr:primaryType="cq:Component"
     jcr:title="Teaser (v1)"
-    sling:resourceSuperType="adobexp/components/image"
+    sling:resourceSuperType="adobexp/components/image/v1/image"
     imageDelegate="adobexp/components/image/v1/image"
     componentGroup=".core-wcm"/>
