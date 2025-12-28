@@ -80,14 +80,16 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
         adaptables = SlingHttpServletRequest.class,
         adapters = { Page.class },
         resourceType = {
-                PageImpl.RESOURCE_TYPE,
-                "adobexp/components/xfpage",
-                "cq/experience-fragments/components/xfpage"
+                PageImpl.RESOURCE_TYPE_1,
+                PageImpl.RESOURCE_TYPE_2,
+                // "adobexp/components/xfpage",
+                // "cq/experience-fragments/components/xfpage"
         }
 )
 public class PageImpl implements Page {
 
-    protected static final String RESOURCE_TYPE = "adobexp/components/page/v1/page";
+    protected static final String RESOURCE_TYPE_1 = "adobexp/components/pages/rootpage/v1/rootpage";
+    protected static final String RESOURCE_TYPE_2 = "adobexp/components/pages/page/v1/page";
 
     @Self
     protected SlingHttpServletRequest request;
