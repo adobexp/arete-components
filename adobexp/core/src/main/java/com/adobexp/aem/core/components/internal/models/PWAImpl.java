@@ -23,7 +23,9 @@ import javax.annotation.PostConstruct;
 
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
+import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.Via;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.jetbrains.annotations.NotNull;
 
@@ -31,8 +33,10 @@ import com.adobexp.aem.core.components.models.PWA;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
 
-@Model(adaptables = Resource.class,
-    adapters = {PWA.class})
+@Model(
+        adaptables = { SlingHttpServletRequest.class, Resource.class },
+        adapters = { PWA.class }
+)
 public class PWAImpl implements PWA {
 
     static final String CONTENT_PATH = "/content/";
@@ -44,10 +48,15 @@ public class PWAImpl implements PWA {
     private String iconPath = "";
 
     @Self
+    @Via("resource")
     private Resource resource;
 
     @PostConstruct
     protected void initModel() {
+        if (resource == null) {
+            return;
+        }
+
         PageManager pageManager = resource.getResourceResolver().adaptTo(PageManager.class);
         if (pageManager == null) {
             return;
